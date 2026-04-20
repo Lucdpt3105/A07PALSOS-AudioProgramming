@@ -59,6 +59,12 @@
     <Compile Include="frPAL1Main.Designer.cs">
       <DependentUpon>frPAL1Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="frPAL2WMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frPAL2WMP.Designer.cs">
+      <DependentUpon>frPAL2WMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frPAL1Main.resx">

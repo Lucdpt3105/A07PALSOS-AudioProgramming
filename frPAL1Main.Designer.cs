@@ -47,6 +47,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.quảnLýÂmThanhDùngIrrKlangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nạpÂmThanhDùngIrrKlangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thuÂmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nạpFilesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xỬLÝÂMTHANHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chuyểnÂmTrầmbassÂmCaotrebleDùngWMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chuyểnÂmCaotrebleÂmTrầmbassDùngWMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,8 +102,6 @@
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.thoátToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.thuÂmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nạpFilesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -123,7 +123,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1373, 41);
+            this.menuStrip1.Size = new System.Drawing.Size(1373, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -139,9 +139,8 @@
             this.thoátToolStripMenuItem});
             this.hỆTHỐNGToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hỆTHỐNGToolStripMenuItem.Name = "hỆTHỐNGToolStripMenuItem";
-            this.hỆTHỐNGToolStripMenuItem.Size = new System.Drawing.Size(133, 33);
+            this.hỆTHỐNGToolStripMenuItem.Size = new System.Drawing.Size(133, 27);
             this.hỆTHỐNGToolStripMenuItem.Text = "HỆ THỐNG";
-            this.hỆTHỐNGToolStripMenuItem.Click += new System.EventHandler(this.hỆTHỐNGToolStripMenuItem_Click);
             // 
             // đăngNhậpToolStripMenuItem
             // 
@@ -149,7 +148,6 @@
             this.đăngNhậpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(342, 40);
             this.đăngNhậpToolStripMenuItem.Text = "Đăng nhập";
-            this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -157,7 +155,6 @@
             this.đăngXuấtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(342, 40);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -187,7 +184,6 @@
             this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(342, 40);
             this.thoátToolStripMenuItem.Text = "Thoát ";
-            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // qUẢNLÝÂMTHANHToolStripMenuItem
             // 
@@ -201,7 +197,6 @@
             this.qUẢNLÝÂMTHANHToolStripMenuItem.Name = "qUẢNLÝÂMTHANHToolStripMenuItem";
             this.qUẢNLÝÂMTHANHToolStripMenuItem.Size = new System.Drawing.Size(232, 27);
             this.qUẢNLÝÂMTHANHToolStripMenuItem.Text = "QUẢN LÝ ÂM THANH";
-            this.qUẢNLÝÂMTHANHToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÝÂMTHANHToolStripMenuItem_Click);
             // 
             // quảnLýÂmThanhDùngWMPToolStripMenuItem
             // 
@@ -209,6 +204,7 @@
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem.Size = new System.Drawing.Size(443, 40);
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem.Text = "Quản lý âm thanh dùng WMP";
+            this.quảnLýÂmThanhDùngWMPToolStripMenuItem.Click += new System.EventHandler(this.quảnLýÂmThanhDùngWMPToolStripMenuItem_Click);
             // 
             // nạpÂmThanhDùngWMPToolStripMenuItem
             // 
@@ -223,13 +219,13 @@
             // thuÂmToolStripMenuItem
             // 
             this.thuÂmToolStripMenuItem.Name = "thuÂmToolStripMenuItem";
-            this.thuÂmToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.thuÂmToolStripMenuItem.Size = new System.Drawing.Size(200, 40);
             this.thuÂmToolStripMenuItem.Text = "Thu âm";
             // 
             // nạpFilesToolStripMenuItem
             // 
             this.nạpFilesToolStripMenuItem.Name = "nạpFilesToolStripMenuItem";
-            this.nạpFilesToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.nạpFilesToolStripMenuItem.Size = new System.Drawing.Size(200, 40);
             this.nạpFilesToolStripMenuItem.Text = "Nạp files";
             // 
             // toolStripSeparator3
@@ -251,6 +247,18 @@
             this.nạpÂmThanhDùngIrrKlangToolStripMenuItem.Name = "nạpÂmThanhDùngIrrKlangToolStripMenuItem";
             this.nạpÂmThanhDùngIrrKlangToolStripMenuItem.Size = new System.Drawing.Size(443, 40);
             this.nạpÂmThanhDùngIrrKlangToolStripMenuItem.Text = "Nạp âm thanh dùng irrKlang";
+            // 
+            // thuÂmToolStripMenuItem1
+            // 
+            this.thuÂmToolStripMenuItem1.Name = "thuÂmToolStripMenuItem1";
+            this.thuÂmToolStripMenuItem1.Size = new System.Drawing.Size(200, 40);
+            this.thuÂmToolStripMenuItem1.Text = "Thu âm";
+            // 
+            // nạpFilesToolStripMenuItem1
+            // 
+            this.nạpFilesToolStripMenuItem1.Name = "nạpFilesToolStripMenuItem1";
+            this.nạpFilesToolStripMenuItem1.Size = new System.Drawing.Size(200, 40);
+            this.nạpFilesToolStripMenuItem1.Text = "Nạp files";
             // 
             // xỬLÝÂMTHANHToolStripMenuItem
             // 
@@ -276,7 +284,7 @@
             this.hợpÂmChordMẫuTrongÂmThToolStripMenuItem});
             this.xỬLÝÂMTHANHToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xỬLÝÂMTHANHToolStripMenuItem.Name = "xỬLÝÂMTHANHToolStripMenuItem";
-            this.xỬLÝÂMTHANHToolStripMenuItem.Size = new System.Drawing.Size(203, 33);
+            this.xỬLÝÂMTHANHToolStripMenuItem.Size = new System.Drawing.Size(203, 27);
             this.xỬLÝÂMTHANHToolStripMenuItem.Text = "XỬ LÝ ÂM THANH";
             // 
             // chuyểnÂmTrầmbassÂmCaotrebleDùngWMPToolStripMenuItem
@@ -307,7 +315,6 @@
             this.điềuChỉnhÂmThanhDùngWMPToolStripMenuItem.Name = "điềuChỉnhÂmThanhDùngWMPToolStripMenuItem";
             this.điềuChỉnhÂmThanhDùngWMPToolStripMenuItem.Size = new System.Drawing.Size(579, 40);
             this.điềuChỉnhÂmThanhDùngWMPToolStripMenuItem.Text = "Điều chỉnh trường độ âm thanh dùng WMP";
-            this.điềuChỉnhÂmThanhDùngWMPToolStripMenuItem.Click += new System.EventHandler(this.điềuChỉnhÂmThanhDùngWMPToolStripMenuItem_Click);
             // 
             // thayĐổiÂmSắcDùngWMPToolStripMenuItem
             // 
@@ -387,13 +394,12 @@
             this.hợpÂmChordMẫuTrongÂmThToolStripMenuItem.Name = "hợpÂmChordMẫuTrongÂmThToolStripMenuItem";
             this.hợpÂmChordMẫuTrongÂmThToolStripMenuItem.Size = new System.Drawing.Size(579, 40);
             this.hợpÂmChordMẫuTrongÂmThToolStripMenuItem.Text = "Hợp âm (Chord) mẫu trong âm nhạc";
-            this.hợpÂmChordMẫuTrongÂmThToolStripMenuItem.Click += new System.EventHandler(this.hợpÂmChordMẫuTrongÂmThToolStripMenuItem_Click);
             // 
             // nHẬNDIỆNÂMTHANHToolStripMenuItem
             // 
             this.nHẬNDIỆNÂMTHANHToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nHẬNDIỆNÂMTHANHToolStripMenuItem.Name = "nHẬNDIỆNÂMTHANHToolStripMenuItem";
-            this.nHẬNDIỆNÂMTHANHToolStripMenuItem.Size = new System.Drawing.Size(254, 33);
+            this.nHẬNDIỆNÂMTHANHToolStripMenuItem.Size = new System.Drawing.Size(254, 27);
             this.nHẬNDIỆNÂMTHANHToolStripMenuItem.Text = "NHẬN DIỆN ÂM THANH";
             // 
             // tRÌNHBÀYToolStripMenuItem
@@ -408,7 +414,7 @@
             this.tỷLệZoomToolStripMenuItem});
             this.tRÌNHBÀYToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tRÌNHBÀYToolStripMenuItem.Name = "tRÌNHBÀYToolStripMenuItem";
-            this.tRÌNHBÀYToolStripMenuItem.Size = new System.Drawing.Size(138, 33);
+            this.tRÌNHBÀYToolStripMenuItem.Size = new System.Drawing.Size(138, 27);
             this.tRÌNHBÀYToolStripMenuItem.Text = "TRÌNH BÀY";
             // 
             // tắtMởThanhThựcĐơnMenuBarToolStripMenuItem
@@ -428,7 +434,6 @@
             this.tắtToolStripMenuItem.Name = "tắtToolStripMenuItem";
             this.tắtToolStripMenuItem.Size = new System.Drawing.Size(427, 40);
             this.tắtToolStripMenuItem.Text = "Tắt || Mở thanh công cụ (Tool Bar)";
-            this.tắtToolStripMenuItem.Click += new System.EventHandler(this.tắtToolStripMenuItem_Click);
             // 
             // tắtMởDòngTrạngTháiStatusBarToolStripMenuItem
             // 
@@ -452,7 +457,6 @@
             this.tắtFormToolStripMenuItem.Name = "tắtFormToolStripMenuItem";
             this.tắtFormToolStripMenuItem.Size = new System.Drawing.Size(427, 40);
             this.tắtFormToolStripMenuItem.Text = "Tắt || mở màn hình MainForm";
-            this.tắtFormToolStripMenuItem.Click += new System.EventHandler(this.tắtFormToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
@@ -469,7 +473,7 @@
             // 
             this.cÔNGCỤToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cÔNGCỤToolStripMenuItem.Name = "cÔNGCỤToolStripMenuItem";
-            this.cÔNGCỤToolStripMenuItem.Size = new System.Drawing.Size(121, 33);
+            this.cÔNGCỤToolStripMenuItem.Size = new System.Drawing.Size(121, 27);
             this.cÔNGCỤToolStripMenuItem.Text = "CÔNG CỤ";
             // 
             // tRỢGIÚPToolStripMenuItem
@@ -480,7 +484,7 @@
             this.toolStripSeparator12});
             this.tRỢGIÚPToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tRỢGIÚPToolStripMenuItem.Name = "tRỢGIÚPToolStripMenuItem";
-            this.tRỢGIÚPToolStripMenuItem.Size = new System.Drawing.Size(122, 33);
+            this.tRỢGIÚPToolStripMenuItem.Size = new System.Drawing.Size(122, 27);
             this.tRỢGIÚPToolStripMenuItem.Text = "TRỢ GIÚP";
             // 
             // gToolStripMenuItem
@@ -510,7 +514,6 @@
             this.label1.Size = new System.Drawing.Size(217, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "GV: Võ Xuân Thể";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -541,7 +544,6 @@
             this.label4.Size = new System.Drawing.Size(752, 32);
             this.label4.TabIndex = 4;
             this.label4.Text = "Lập trình hệ thống quản lý files âm thanh các tiếng báo động ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -552,7 +554,6 @@
             this.label5.Size = new System.Drawing.Size(612, 32);
             this.label5.TabIndex = 5;
             this.label5.Text = "KHOA CNTT, PTIT.HCM, NĂM 2025-2026. HK2";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // toolStrip1
             // 
@@ -561,7 +562,7 @@
             this.toolStripButton1,
             this.toolStripSeparator13,
             this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 41);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 35);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1373, 42);
             this.toolStrip1.TabIndex = 6;
@@ -577,6 +578,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(91, 36);
             this.toolStripButton1.Text = "WMP";
+            this.toolStripButton1.Click += new System.EventHandler(this.quảnLýÂmThanhDùngWMPToolStripMenuItem_Click);
             // 
             // toolStripSeparator13
             // 
@@ -611,7 +613,7 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(865, 30);
             this.toolStripStatusLabel1.Text = "GVHD: Võ Xuân Thể, SVTH: 07 Phùng Anh Lực, ĐAHP: Audio_Pro, PTITHCM-2025_2026, HK" +
     "2";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+           // this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // toolStripStatusLabel2
             // 
@@ -622,7 +624,7 @@
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(331, 30);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(439, 30);
             this.toolStripStatusLabel3.Spring = true;
             this.toolStripStatusLabel3.Text = "clockEvent";
             // 
@@ -637,7 +639,6 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "07 PAL Audio Pro PtitHCM";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -655,6 +656,7 @@
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem1.Size = new System.Drawing.Size(442, 36);
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem1.Text = "Quản lý âm thanh dùng WMP";
+            this.quảnLýÂmThanhDùngWMPToolStripMenuItem1.Click += new System.EventHandler(this.quảnLýÂmThanhDùngWMPToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -667,18 +669,6 @@
             this.thoátToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.thoátToolStripMenuItem1.Size = new System.Drawing.Size(442, 36);
             this.thoátToolStripMenuItem1.Text = "Thoát ";
-            // 
-            // thuÂmToolStripMenuItem1
-            // 
-            this.thuÂmToolStripMenuItem1.Name = "thuÂmToolStripMenuItem1";
-            this.thuÂmToolStripMenuItem1.Size = new System.Drawing.Size(315, 40);
-            this.thuÂmToolStripMenuItem1.Text = "Thu âm";
-            // 
-            // nạpFilesToolStripMenuItem1
-            // 
-            this.nạpFilesToolStripMenuItem1.Name = "nạpFilesToolStripMenuItem1";
-            this.nạpFilesToolStripMenuItem1.Size = new System.Drawing.Size(315, 40);
-            this.nạpFilesToolStripMenuItem1.Text = "Nạp files";
             // 
             // frPAL1Main
             // 
@@ -704,7 +694,6 @@
             this.Name = "frPAL1Main";
             this.Text = "AUDIO PROGRAM BY 07 Phùng Anh Lực, D23CQPTUD01-N :  PTIT HCM";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.Load += new System.EventHandler(this.frPAL1Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
