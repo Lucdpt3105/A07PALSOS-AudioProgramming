@@ -16,7 +16,8 @@ namespace A07PALSOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frPAL1Main());
+            Application.Run(new frPAL2WMP());
+
         }
     }
 }

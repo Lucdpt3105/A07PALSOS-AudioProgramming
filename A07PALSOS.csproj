@@ -36,6 +36,9 @@
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="irrKlang.NET4">
+      <HintPath>..\DevTools\irrKlang-master\irrKlang-master\bin\dotnet-4-64\irrKlang.NET4.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -53,6 +56,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A07PALSOSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>A07PALSOSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frPAL1Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +78,9 @@
     <EmbeddedResource Include="frPAL1Main.resx">
       <DependentUpon>frPAL1Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frPAL2WMP.resx">
+      <DependentUpon>frPAL2WMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,6 +90,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="A07PALSOSDataSet.xsc">
+      <DependentUpon>A07PALSOSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="A07PALSOSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>A07PALSOSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="A07PALSOSDataSet.xss">
+      <DependentUpon>A07PALSOSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +114,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="FileAmThanh\AMBULANCE.mp3" />
+    <Content Include="FileAmThanh\BAOTHUC.mp3" />
+    <Content Include="FileAmThanh\CACH_LY.mp3" />
+    <Content Include="FileAmThanh\ChienTranh-Civil.mp3" />
+    <Content Include="FileAmThanh\KHONG_GIAN.mp3" />
+    <Content Include="FileAmThanh\LENH_CHAY.mp3" />
+    <Content Include="FileAmThanh\NUKE.mp3" />
+    <Content Include="FileAmThanh\POLICE.mp3" />
+    <Content Include="FileAmThanh\SCIFI_MONSTER.mp3" />
+    <Content Include="FileAmThanh\SINH-HOC.mp3" />
+    <Content Include="FileAmThanh\SO_TAN.mp3" />
+    <Content Include="FileAmThanh\SO_TANP2.mp3" />
+    <Content Include="FileAmThanh\STYLE-TRUYENTHONG.mp3" />
+    <Content Include="FileAmThanh\TinHieuSOS.mp3" />
+    <Content Include="FileAmThanh\XeOto-Car.mp3" />
+    <Content Include="FileAmThanh\Zombie-Alarm.mp3" />
+    <Content Include="FileAmThanh\Ấn Độ Mixi %28Nà Ná Na Na Anh Độ Mixi%29.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
