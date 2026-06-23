@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -7,6 +8,14 @@ namespace A07PALSOS
     internal static class AudioFileStore
     {
         private static readonly string StorePath = Path.Combine(AppPaths.DataDirectory, "AudioFiles.xml");
+
+        public static string OpenFileFilter
+        {
+            get
+            {
+                return "Audio files (*.mp3;*.wav;*.wma;*.flac;*.ogg)|*.mp3;*.wav;*.wma;*.flac;*.ogg|All files (*.*)|*.*";
+            }
+        }
 
         public static void Load(A07PALSOSDataSet dataSet)
         {
@@ -38,8 +47,75 @@ namespace A07PALSOS
             int sizeKb = fileInfo.Exists ? Convert.ToInt32(Math.Max(1, fileInfo.Length / 1024)) : 0;
             string extension = Path.GetExtension(fileName);
 
-            dataSet.AUDIOFILES.AddAUDIOFILESRow(ms.Trim(), fileName, filePath, sizeKb, extension, 0, description);
+            string audioId = string.IsNullOrWhiteSpace(ms) ? GenerateNextId(dataSet) : ms.Trim();
+            A07PALSOSDataSet.AUDIOFILESRow existingRow = dataSet.AUDIOFILES.FindByms(audioId);
+            if (existingRow == null)
+            {
+                dataSet.AUDIOFILES.AddAUDIOFILESRow(audioId, fileName, filePath, sizeKb, extension, 0, description);
+            }
+            else
+            {
+                existingRow.filename = fileName;
+                existingRow.filepath = filePath;
+                existingRow.size = sizeKb;
+                existingRow.ext = extension;
+                existingRow.description = description;
+            }
+
             Save(dataSet);
+        }
+
+        public static int ImportAudioFiles(A07PALSOSDataSet dataSet, IEnumerable<string> sourceFiles)
+        {
+            Directory.CreateDirectory(AppPaths.AudioDirectory);
+            int importedCount = 0;
+
+            foreach (string sourceFile in sourceFiles.Where(AppPaths.IsSupportedAudioFile))
+            {
+                if (!File.Exists(sourceFile))
+                {
+                    continue;
+                }
+
+                string destinationPath = CreateUniqueDestinationPath(Path.GetFileName(sourceFile));
+                File.Copy(sourceFile, destinationPath, false);
+                AddAudioRow(dataSet, GenerateNextId(dataSet), Path.GetFileName(destinationPath), destinationPath);
+                importedCount++;
+            }
+
+            if (importedCount > 0)
+            {
+                Save(dataSet);
+            }
+
+            return importedCount;
+        }
+
+        public static int SyncFromAudioDirectory(A07PALSOSDataSet dataSet)
+        {
+            Directory.CreateDirectory(AppPaths.AudioDirectory);
+            int addedCount = 0;
+
+            foreach (string filePath in Directory.GetFiles(AppPaths.AudioDirectory).Where(AppPaths.IsSupportedAudioFile).OrderBy(Path.GetFileName))
+            {
+                string fileName = Path.GetFileName(filePath);
+                bool exists = dataSet.AUDIOFILES.Any(row =>
+                    string.Equals(row.IsfilenameNull() ? string.Empty : row.filename, fileName, StringComparison.OrdinalIgnoreCase));
+                if (exists)
+                {
+                    continue;
+                }
+
+                AddAudioRow(dataSet, GenerateNextId(dataSet), fileName, filePath);
+                addedCount++;
+            }
+
+            if (addedCount > 0)
+            {
+                Save(dataSet);
+            }
+
+            return addedCount;
         }
 
         public static void UpdateDescription(A07PALSOSDataSet dataSet, string ms, string description)
@@ -101,6 +177,39 @@ namespace A07PALSOS
             FileInfo fileInfo = new FileInfo(filePath);
             int sizeKb = fileInfo.Exists ? Convert.ToInt32(Math.Max(1, fileInfo.Length / 1024)) : 0;
             dataSet.AUDIOFILES.AddAUDIOFILESRow(ms, fileName, filePath, sizeKb, Path.GetExtension(fileName), 0, string.Empty);
+        }
+
+        private static string GenerateNextId(A07PALSOSDataSet dataSet)
+        {
+            int index = 1;
+            while (dataSet.AUDIOFILES.FindByms("AU" + index.ToString("000")) != null)
+            {
+                index++;
+            }
+
+            return "AU" + index.ToString("000");
+        }
+
+        private static string CreateUniqueDestinationPath(string fileName)
+        {
+            string safeFileName = Path.GetFileName(fileName);
+            string destinationPath = Path.Combine(AppPaths.AudioDirectory, safeFileName);
+            if (!File.Exists(destinationPath))
+            {
+                return destinationPath;
+            }
+
+            string baseName = Path.GetFileNameWithoutExtension(safeFileName);
+            string extension = Path.GetExtension(safeFileName);
+            int copyIndex = 1;
+            do
+            {
+                destinationPath = Path.Combine(AppPaths.AudioDirectory, baseName + "_" + copyIndex + extension);
+                copyIndex++;
+            }
+            while (File.Exists(destinationPath));
+
+            return destinationPath;
         }
     }
 }
