@@ -75,40 +75,40 @@ SELECT ms, filename, filepath, size, ext, length, description FROM AUDIOFILES WH
   <xs:element name="A07PALSOSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="A07PALSOSDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="A07PALSOSDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AUDIOFILES" msprop:Generator_RowClassName="AUDIOFILESRow" msprop:Generator_RowEvHandlerName="AUDIOFILESRowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIOFILESRowDeleted" msprop:Generator_RowDeletingName="AUDIOFILESRowDeleting" msprop:Generator_RowEvArgName="AUDIOFILESRowChangeEvent" msprop:Generator_TablePropName="AUDIOFILES" msprop:Generator_RowChangedName="AUDIOFILESRowChanged" msprop:Generator_UserTableName="AUDIOFILES" msprop:Generator_RowChangingName="AUDIOFILESRowChanging" msprop:Generator_TableClassName="AUDIOFILESDataTable" msprop:Generator_TableVarName="tableAUDIOFILES">
+        <xs:element name="AUDIOFILES" msprop:Generator_RowEvHandlerName="AUDIOFILESRowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIOFILESRowDeleted" msprop:Generator_RowDeletingName="AUDIOFILESRowDeleting" msprop:Generator_RowEvArgName="AUDIOFILESRowChangeEvent" msprop:Generator_TablePropName="AUDIOFILES" msprop:Generator_RowChangedName="AUDIOFILESRowChanged" msprop:Generator_UserTableName="AUDIOFILES" msprop:Generator_RowChangingName="AUDIOFILESRowChanging" msprop:Generator_RowClassName="AUDIOFILESRow" msprop:Generator_TableClassName="AUDIOFILESDataTable" msprop:Generator_TableVarName="tableAUDIOFILES">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ms" msprop:Generator_UserColumnName="ms" msprop:Generator_ColumnPropNameInTable="msColumn" msprop:Generator_ColumnPropNameInRow="ms" msprop:Generator_ColumnVarNameInTable="columnms">
+              <xs:element name="ms" msprop:Generator_ColumnPropNameInTable="msColumn" msprop:Generator_ColumnPropNameInRow="ms" msprop:Generator_UserColumnName="ms" msprop:Generator_ColumnVarNameInTable="columnms">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="filename" msprop:Generator_UserColumnName="filename" msprop:Generator_ColumnPropNameInTable="filenameColumn" msprop:Generator_ColumnPropNameInRow="filename" msprop:Generator_ColumnVarNameInTable="columnfilename" minOccurs="0">
+              <xs:element name="filename" msprop:Generator_ColumnPropNameInTable="filenameColumn" msprop:Generator_ColumnPropNameInRow="filename" msprop:Generator_UserColumnName="filename" msprop:Generator_ColumnVarNameInTable="columnfilename" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="filepath" msprop:Generator_UserColumnName="filepath" msprop:Generator_ColumnPropNameInTable="filepathColumn" msprop:Generator_ColumnPropNameInRow="filepath" msprop:Generator_ColumnVarNameInTable="columnfilepath" minOccurs="0">
+              <xs:element name="filepath" msprop:Generator_ColumnPropNameInTable="filepathColumn" msprop:Generator_ColumnPropNameInRow="filepath" msprop:Generator_UserColumnName="filepath" msprop:Generator_ColumnVarNameInTable="columnfilepath" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="size" msprop:Generator_UserColumnName="size" msprop:Generator_ColumnPropNameInTable="sizeColumn" msprop:Generator_ColumnPropNameInRow="size" msprop:Generator_ColumnVarNameInTable="columnsize" type="xs:int" minOccurs="0" />
-              <xs:element name="ext" msprop:Generator_UserColumnName="ext" msprop:Generator_ColumnPropNameInTable="extColumn" msprop:Generator_ColumnPropNameInRow="ext" msprop:Generator_ColumnVarNameInTable="columnext" minOccurs="0">
+              <xs:element name="size" msprop:Generator_ColumnPropNameInTable="sizeColumn" msprop:Generator_ColumnPropNameInRow="size" msprop:Generator_UserColumnName="size" msprop:Generator_ColumnVarNameInTable="columnsize" type="xs:int" minOccurs="0" />
+              <xs:element name="ext" msprop:Generator_ColumnPropNameInTable="extColumn" msprop:Generator_ColumnPropNameInRow="ext" msprop:Generator_UserColumnName="ext" msprop:Generator_ColumnVarNameInTable="columnext" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="length" msprop:Generator_UserColumnName="length" msprop:Generator_ColumnPropNameInTable="lengthColumn" msprop:Generator_ColumnPropNameInRow="length" msprop:Generator_ColumnVarNameInTable="columnlength" type="xs:int" minOccurs="0" />
-              <xs:element name="description" msprop:Generator_UserColumnName="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnVarNameInTable="columndescription" minOccurs="0">
+              <xs:element name="length" msprop:Generator_ColumnPropNameInTable="lengthColumn" msprop:Generator_ColumnPropNameInRow="length" msprop:Generator_UserColumnName="length" msprop:Generator_ColumnVarNameInTable="columnlength" type="xs:int" minOccurs="0" />
+              <xs:element name="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_UserColumnName="description" msprop:Generator_ColumnVarNameInTable="columndescription" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />

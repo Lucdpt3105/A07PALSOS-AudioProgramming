@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WMPLib; //Âm thanh sử dụng Loa trong = có sẵn của PC
-using AxWMPLib; //Âm thanh sử dụng Loa Ngoài = lắp vào PC = Aux...
+using WMPLib; //Âm thanh sử dụng Lo PC          
+using AxWMPLib; //Âm thanh sử dụng Loa Ngoài = lắp vào PC = Aux...        
 using System.IO; //Xử lý file âm thanh
 
 
@@ -16,10 +16,9 @@ namespace A07PALSOS
 {
     public partial class frPAL2WMP : Form
     {
-
-        string audiopath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)) + "\\FileAmThanh\\"; 
+        string audiopath =Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)))   + "\\FileAmThanh\\";
         //LẤY THƯ MỤC HIỆN TẠI (PATH) CỦA APP
-        //Application.StartupPath = đường dẫn thư mục App \bin\Debug => để path của App lấy ra ngoài thư mục cha 2 lần
+        //Application.StartupPath = đường dẫn thư mục App \bin\Debug => để path của App lấy ra ngoài thư mục cha 3 lần
 
         /// <summary>
         /// Hàm thiết lập = KHÔNG ĐƯỢC XÓA BẰNG MỌI GIÁ & ĐÚNG TÊN CLASS FORM PHÍA TRÊN // CÙNG namespace trùng với tên project
@@ -77,6 +76,7 @@ namespace A07PALSOS
         //Play = CHẠY FILE AUDIO FILES
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(audiopath);
             axWMP.Ctlcontrols.play();//phát âm thanh
         }
         // Tạm dừng (pause) audio file hiện đang play trên WMP

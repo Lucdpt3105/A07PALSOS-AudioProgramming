@@ -49,5 +49,36 @@ namespace A07PALSOS
                 Application.Exit();//thoát chương trình
             }
         }
+
+        private void quảnLýÂmThanhDùngIrrKlangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frPAL3IrrKlang fr = new frPAL3IrrKlang();
+            fr.ShowDialog();
+        }
+
+        private void tắtMởThanhThựcĐơnMenuBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menuStrip1.Visible = !menuStrip1.Visible;
+        }
+
+        private void tắtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStrip1.Visible = !toolStrip1.Visible;
+        }
+
+        private void tắtMởDòngTrạngTháiStatusBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = !statusStrip1.Visible;  // Ẩn/Hiện statusbar
+        }
+
+        private void tắtFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult ch = MessageBox.Show("Có thật sự là muốn thoát chương trình này hay không (Y/N)", "Xác nhận",
+                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ch == DialogResult.Yes)
+            {
+                Application.Exit();  // Thoát app
+            }
+        }
     }// class
 }// namespace

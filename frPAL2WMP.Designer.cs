@@ -281,7 +281,7 @@
             this.listBoxAuFile.DisplayMember = "filename";
             this.listBoxAuFile.FormattingEnabled = true;
             this.listBoxAuFile.ItemHeight = 24;
-            this.listBoxAuFile.Location = new System.Drawing.Point(27, 91);
+            this.listBoxAuFile.Location = new System.Drawing.Point(33, 91);
             this.listBoxAuFile.Name = "listBoxAuFile";
             this.listBoxAuFile.Size = new System.Drawing.Size(307, 412);
             this.listBoxAuFile.TabIndex = 1;
