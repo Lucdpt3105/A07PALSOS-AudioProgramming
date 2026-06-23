@@ -16,9 +16,9 @@ namespace A07PALSOS
 {
     public partial class frPAL2WMP : Form
     {
-        string audiopath =Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)))   + "\\FileAmThanh\\";
+        string audiopath = AppPaths.AudioDirectory + "\\";
         //LẤY THƯ MỤC HIỆN TẠI (PATH) CỦA APP
-        //Application.StartupPath = đường dẫn thư mục App \bin\Debug => để path của App lấy ra ngoài thư mục cha 3 lần
+        //Application.StartupPath = thư mục chứa file .exe khi chạy Debug/Release
 
         /// <summary>
         /// Hàm thiết lập = KHÔNG ĐƯỢC XÓA BẰNG MỌI GIÁ & ĐÚNG TÊN CLASS FORM PHÍA TRÊN // CÙNG namespace trùng với tên project
@@ -76,7 +76,16 @@ namespace A07PALSOS
         //Play = CHẠY FILE AUDIO FILES
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(audiopath);
+            audiopath = AppPaths.AudioDirectory + "\\";
+            string filePath = AppPaths.ResolveAudioFile(txtPath.Text, txtFileName.Text);
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Không tìm thấy file âm thanh: " + filePath, "Lỗi phát âm thanh",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            axWMP.URL = filePath;
             axWMP.Ctlcontrols.play();//phát âm thanh
         }
         // Tạm dừng (pause) audio file hiện đang play trên WMP
@@ -169,6 +178,7 @@ namespace A07PALSOS
                     //[1] COPY FILE ÂM THANH ĐÃ CHỌN VÀO THƯ MỤC ~\\FileAmThanh
                     try
                     {
+                        Directory.CreateDirectory(AppPaths.AudioDirectory);
                         File.Copy(openFileDialog1.FileName, audiopath + tenfile, true);// tự xử lý thêm 1 số lỗi như: nếu file đã tồn tại trong thư mục đích thì có chồng lên hay không, nếu file nguồn không tồn tại, nếu đường dẫn sai...v.v
                         //[1 TRONG 2 CÂU LỆNH QUANG TRỌNG] //openFileDialog1.FileName = Full path của file nguồn || System.IO.Path.GetFileName(...) lấy tên của path || true = chồng lên nêu trong thư mục đã có sẵn file
                     }

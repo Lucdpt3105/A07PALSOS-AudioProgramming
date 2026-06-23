@@ -81,6 +81,8 @@
             // 
             // LbTitle
             // 
+            this.LbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LbTitle.AutoSize = true;
             this.LbTitle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTitle.Location = new System.Drawing.Point(21, 28);
@@ -91,6 +93,8 @@
             // 
             // gBAudioInfo07
             // 
+            this.gBAudioInfo07.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gBAudioInfo07.BackColor = System.Drawing.SystemColors.Control;
             this.gBAudioInfo07.Controls.Add(this.txtDesc);
             this.gBAudioInfo07.Controls.Add(this.txtLength);
@@ -309,7 +313,9 @@
             // 
             // gBAudioTest07
             // 
-            this.gBAudioTest07.AutoSize = true;
+            this.gBAudioTest07.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gBAudioTest07.AutoSize = false;
             this.gBAudioTest07.BackColor = System.Drawing.SystemColors.Control;
             this.gBAudioTest07.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.gBAudioTest07.Controls.Add(this.BtnLast);
@@ -432,6 +438,7 @@
             // 
             // BtnLoad
             // 
+            this.BtnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnLoad.Location = new System.Drawing.Point(27, 685);
             this.BtnLoad.Name = "BtnLoad";
             this.BtnLoad.Size = new System.Drawing.Size(130, 43);
@@ -442,6 +449,7 @@
             // 
             // BtnModify
             // 
+            this.BtnModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnModify.Location = new System.Drawing.Point(239, 685);
             this.BtnModify.Name = "BtnModify";
             this.BtnModify.Size = new System.Drawing.Size(189, 43);
@@ -452,6 +460,7 @@
             // 
             // BtnRecord
             // 
+            this.BtnRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnRecord.Location = new System.Drawing.Point(470, 685);
             this.BtnRecord.Name = "BtnRecord";
             this.BtnRecord.Size = new System.Drawing.Size(154, 43);
@@ -461,6 +470,7 @@
             // 
             // BtnDelete
             // 
+            this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnDelete.Location = new System.Drawing.Point(673, 685);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(130, 43);
@@ -471,6 +481,7 @@
             // 
             // BtnClose
             // 
+            this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnClose.Location = new System.Drawing.Point(833, 685);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(345, 43);
@@ -481,6 +492,7 @@
             // 
             // BtnExit
             // 
+            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnExit.Location = new System.Drawing.Point(1303, 685);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(130, 43);
@@ -499,8 +511,9 @@
             // 
             // frPAL2WMP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1460, 845);
             this.Controls.Add(this.gBAudioTest07);
@@ -512,7 +525,9 @@
             this.Controls.Add(this.BtnRecord);
             this.Controls.Add(this.BtnModify);
             this.Controls.Add(this.BtnLoad);
+            this.MinimumSize = new System.Drawing.Size(1180, 760);
             this.Name = "frPAL2WMP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "[07 PAL] QUẢN LÝ FILES ÂM THANH DÙNG THƯ VIỆN WMP.dll CỦA MS. WINDOWS";
             this.Load += new System.EventHandler(this.frPAL2WMP_Load);
             this.gBAudioInfo07.ResumeLayout(false);
