@@ -4,16 +4,22 @@
 
 ## Hình ảnh
 
+### Main Form
 
-
-![Màn hình chính](docs/images/main-form.png)
+<img src ="docs/images/main-form.png" width = "700">
 -> Main form hiển thị danh sách file âm thanh, cho phép phát thử bằng Windows Media Player và phát âm thanh 3D bằng irrKlang.
 
-![Quản lý âm thanh WMP](docs/images/wmp-manager.png)
+---
+### Quản lý âm thanh WMP
+<img src="docs/images/wmp-manager.png" width="400">
 -> Form quản lý âm thanh bằng Windows Media Player, cho phép phát, tạm dừng, dừng và chuyển track.
 
-![Phát âm thanh 3D irrKlang](docs/images/irrklang-3d.png)
--> Form phát âm thanh 3D bằng irrKlang, cho phép chỉnh vị trí nguồn âm theo trục X/Y/Z.
+---
+## Phát âm thanh 3D irrKlang
+
+<img src="docs/images/irrklang-3d.png" width="300">
+
+Form phát âm thanh 3D bằng irrKlang, cho phép chỉnh vị trí nguồn âm theo trục X/Y/Z.
 
 ## Tính năng
 
