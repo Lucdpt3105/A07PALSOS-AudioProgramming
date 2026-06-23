@@ -26,8 +26,7 @@ namespace A07PALSOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EQIGCK5;Initial Catalog=A07PALSOS;Persist Security Info=True;" +
-            "User ID=sa;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=A07PALSOS;Integrated Security=True;TrustServerCertificate=True")]
         public string A07PALSOSConnectionString {
             get {
                 return ((string)(this["A07PALSOSConnectionString"]));
@@ -37,8 +36,7 @@ namespace A07PALSOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EQIGCK5;Initial Catalog=A07PALSOS;Integrated Security=True;Tr" +
-            "ustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=A07PALSOS;Integrated Security=True;TrustServerCertificate=True")]
         public string A07PALSOSConnectionString1 {
             get {
                 return ((string)(this["A07PALSOSConnectionString1"]));

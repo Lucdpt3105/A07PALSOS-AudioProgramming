@@ -7,6 +7,7 @@ namespace A07PALSOS
     internal static class AppPaths
     {
         private const string AudioFolderName = "FileAmThanh";
+        private const string DataFolderName = "Data";
 
         public static string AudioDirectory
         {
@@ -32,6 +33,14 @@ namespace A07PALSOS
 
                 Directory.CreateDirectory(outputAudioDirectory);
                 return outputAudioDirectory;
+            }
+        }
+
+        public static string DataDirectory
+        {
+            get
+            {
+                return Path.Combine(Application.StartupPath, DataFolderName);
             }
         }
 

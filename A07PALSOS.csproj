@@ -90,6 +90,7 @@
       <DependentUpon>A07PALSOSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="AppPaths.cs" />
+    <Compile Include="AudioFileStore.cs" />
     <Compile Include="frPAL1Main.cs">
       <SubType>Form</SubType>
     </Compile>

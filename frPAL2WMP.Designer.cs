@@ -70,7 +70,6 @@
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
-            this.aUDIOFILESTableAdapter = new A07PALSOS.A07PALSOSDataSetTableAdapters.AUDIOFILESTableAdapter();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.gBAudioInfo07.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aUDIOFILESBindingSource)).BeginInit();
@@ -501,10 +500,6 @@
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // aUDIOFILESTableAdapter
-            // 
-            this.aUDIOFILESTableAdapter.ClearBeforeFill = true;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -583,7 +578,6 @@
         private System.Windows.Forms.Button BtnExit;
         private A07PALSOSDataSet a07PALSOSDataSet;
         private System.Windows.Forms.BindingSource aUDIOFILESBindingSource;
-        private A07PALSOSDataSetTableAdapters.AUDIOFILESTableAdapter aUDIOFILESTableAdapter;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

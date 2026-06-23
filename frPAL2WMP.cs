@@ -37,9 +37,9 @@ namespace A07PALSOS
         {
             try
             {
-                this.aUDIOFILESTableAdapter.Fill(this.a07PALSOSDataSet.AUDIOFILES);
+                AudioFileStore.Load(this.a07PALSOSDataSet);
             }
-            catch (System.Exception ex) { MessageBox.Show("Lỗi nạp dữ lệu các files âm thanh " + ex.Message); }
+            catch (System.Exception ex) { MessageBox.Show("Lỗi nạp dữ liệu các files âm thanh " + ex.Message); }
         }
         /// <summary>
         /// CLOSE FORM NÀY => MH CHÍNH
@@ -179,7 +179,8 @@ namespace A07PALSOS
                     try
                     {
                         Directory.CreateDirectory(AppPaths.AudioDirectory);
-                        File.Copy(openFileDialog1.FileName, audiopath + tenfile, true);// tự xử lý thêm 1 số lỗi như: nếu file đã tồn tại trong thư mục đích thì có chồng lên hay không, nếu file nguồn không tồn tại, nếu đường dẫn sai...v.v
+                        string destinationPath = Path.Combine(AppPaths.AudioDirectory, tenfile);
+                        File.Copy(openFileDialog1.FileName, destinationPath, true);// tự xử lý thêm 1 số lỗi như: nếu file đã tồn tại trong thư mục đích thì có chồng lên hay không, nếu file nguồn không tồn tại, nếu đường dẫn sai...v.v
                         //[1 TRONG 2 CÂU LỆNH QUANG TRỌNG] //openFileDialog1.FileName = Full path của file nguồn || System.IO.Path.GetFileName(...) lấy tên của path || true = chồng lên nêu trong thư mục đã có sẵn file
                     }
                     catch (System.Exception ex) { MessageBox.Show("Có lỗi copy file âm thanh:" + ex.Message); }
@@ -190,7 +191,8 @@ namespace A07PALSOS
                     {
                         try
                         {
-                            aUDIOFILESTableAdapter.Insert(txtMaSo.Text.Trim(), tenfile, audiopath + tenfile, 0, "", 0, txtDesc.Text);
+                            string destinationPath = Path.Combine(AppPaths.AudioDirectory, tenfile);
+                            AudioFileStore.AddAudioFile(this.a07PALSOSDataSet, txtMaSo.Text.Trim(), tenfile, destinationPath, txtDesc.Text);
                             //NẠP THÔNG TIN FILE ÂM THANH VÀO DB [1 TRONG 2 CÂU LỆNH QUANG TRỌNG]
                             //INSERT INTO AUDIOFILES
                                                 //           (ms, filename, filepath, size, ext, length, description)
@@ -206,7 +208,7 @@ namespace A07PALSOS
                     try
                     {
                         // TODO: This line of code loads data into the 'A07PAL_SOSDataSet1.AUDIOFILES' table. You can move, or remove it, as needed.
-                        this.aUDIOFILESTableAdapter.Fill(this.a07PALSOSDataSet.AUDIOFILES);
+                        AudioFileStore.Load(this.a07PALSOSDataSet);
                     }
                     catch (Exception ex) { MessageBox.Show("Có lỗi tải các files âm thanh lên danh sách! " + ex.Message); }
 
@@ -247,7 +249,7 @@ namespace A07PALSOS
             {//B3: SỬA THÔNG TIN FILE ÂM THANH  + Update THÔNG TIN SỬA VÀO DB
                 try
                 {
-                    aUDIOFILESTableAdapter.Update(txtDesc.Text, txtMaSo.Text.Trim());
+                    AudioFileStore.UpdateDescription(this.a07PALSOSDataSet, txtMaSo.Text.Trim(), txtDesc.Text);
                     //Lưu THÔNG TIN FILE ÂM THANH sau Sửa VÀO DB [CÂU LỆNH QUANG TRỌNG]
                 }
                 catch (System.Exception ex)
@@ -256,7 +258,7 @@ namespace A07PALSOS
                 //B4: Tải file mới vừa nạp vào ListBox và nghe thử / axWMP = COPY xuống TỪ trên FrWMPManagement_Load(..)
                 try
                 {
-                    this.aUDIOFILESTableAdapter.Fill(this.a07PALSOSDataSet.AUDIOFILES);
+                    AudioFileStore.Load(this.a07PALSOSDataSet);
                     //nạp DB files âm thanh
                 }
                 catch (System.Exception ex)
@@ -284,14 +286,14 @@ namespace A07PALSOS
             {
                 try
                 {
-                    aUDIOFILESTableAdapter.Delete(txtMaSo.Text.Trim());//XÓA FILE ÂM THANH [CÂU LỆNH QUANG TRỌNG]
+                    AudioFileStore.DeleteAudioFile(this.a07PALSOSDataSet, txtMaSo.Text.Trim());//XÓA THÔNG TIN FILE ÂM THANH
                 }
                 catch (System.Exception ex)
                 { MessageBox.Show("Có lỗi khi XÓA file âm thanh: " + ex.Message); }
                 //B3: Tải các file sau xóa lên ListBox = COPY xuống TỪ trên FrWMPManagement_Load(..)
                 try
                 {
-                    this.aUDIOFILESTableAdapter.Fill(this.a07PALSOSDataSet.AUDIOFILES);
+                    AudioFileStore.Load(this.a07PALSOSDataSet);
                     //nạp DB files âm thanh
                 }
                 catch (System.Exception ex)
